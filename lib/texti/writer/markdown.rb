@@ -5,7 +5,18 @@ module Texti
 
 class MarkdownWriter
 
-   attr_reader :text     ## converted text (in markdown)
+
+
+def markdown() @text; end
+
+def html
+  ### kramdown hack
+  ##  escape | => \|   otherwise get turned into a table
+
+  text = @text.gsub( /\|/, '\|' )
+
+  Kramdown::Document.new( text ).to_html
+end
 
 
 def initialize( text )
@@ -23,7 +34,6 @@ def initialize( text )
   ## change/convert headings
   @text = convert_headings( @text )
   @text = convert_emphasis( @text )   # bold / italics
-
 end
 
 
