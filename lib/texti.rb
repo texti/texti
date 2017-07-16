@@ -15,6 +15,8 @@ require 'texti/template'
 require 'texti/outline'
 require 'texti/table_of_contents'
 require 'texti/reference'
+require 'texti/page'
+require 'texti/writer/markdown'
 
 
 # say hello

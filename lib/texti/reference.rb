@@ -23,7 +23,7 @@ def parse_reference
     ref = ''
     stack = []
     loop do
-      ## everything except [] -note: must add newline too (not include in [^])
+      ## everything except []
       run = @buffer.scan( /[^\[\]]*/ )
       puts "    ref run is >#{run}<"
       ref << run
