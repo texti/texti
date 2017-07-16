@@ -13,6 +13,7 @@ require 'texti/pattern'
 require 'texti/parser'
 require 'texti/template'
 require 'texti/outline'
+require 'texti/table_of_contents'
 
 
 # say hello
