@@ -13,6 +13,10 @@ def initialize( text )
   ## for now convert to markdown/kramdown
   @text = MarkdownWriter.new( text ).markdown
 
+  ### kramdown hack
+  ##  escape | => \|   otherwise get turned into a table
+  @text = @text.gsub( /\|/, '\|' )
+
   @text = Kramdown::Document.new( @text ).to_latex
 end
 

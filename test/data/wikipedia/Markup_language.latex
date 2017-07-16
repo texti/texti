@@ -2,11 +2,7 @@
 
 A \textbf{markup language} is a system for [[annotation\textbar{}annotating]] a [[document]]
 in a way that is [[Syntax (logic)\textbar{}syntactically distinguishable]] from the
-text.\footnote{\begin{longtable}{|l|l|}
-\hline
-\{\{MerriamWebsterDictionary & markup language\}\}\\
-\hline
-\end{longtable}} The idea and terminology
+text.\footnote{\{\{MerriamWebsterDictionary\textbar{}markup language\}\}} The idea and terminology
 evolved from the ``marking up'' of paper manuscripts, i.e., the revision
 instructions by editors, traditionally written with a [[blue pencil (editing)\textbar{}blue pencil]]
 on authors' [[manuscript]]s.
@@ -32,15 +28,7 @@ in the communication of printed work between authors, editors, and printers.
 
 \subsection{Types}\hypertarget{types}{}\label{types}
 
-There are three main general categories of electronic markup:\footnote{\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-\{\{cite journal & date=November 1987 & title=Markup systems and the future of scholarly text processing & journal=[[Communications of the ACM]] & publisher=[[Association for Computing Machinery & ACM]] & volume=30 & issue=11 & pages=933–947 & doi=10.1145/32206.32209 & url=http://xml.coverpages.org/coombs.html & first1=James H. & last1=Coombs & first2=Allen H. & last2=Renear & first3=Steven J. & last3=DeRose\}\}\\
-\hline
-\end{longtable}}\footnote{\begin{longtable}{|l|l|l|l|l|l|l|l|l|}
-\hline
-\{\{cite web & last=Bray & first=Tim & authorlink=Tim Bray & url=http://www.tbray.org/ongoing/When/200x/2003/04/09/SemanticMarkup\#p-1 & title=On Semantics and Markup, Taxonomy of Markup & website=www.tbray.org/ongoing & date=9 April 2003 & access-date=9 July 2015\}\}\\
-\hline
-\end{longtable}}
+There are three main general categories of electronic markup:\footnote{\{\{cite journal\textbar{}date=November 1987\textbar{}title=Markup systems and the future of scholarly text processing\textbar{}journal=[[Communications of the ACM]]\textbar{}publisher=[[Association for Computing Machinery\textbar{}ACM]]\textbar{}volume=30\textbar{}issue=11\textbar{}pages=933–947\textbar{}doi=10.1145/32206.32209\textbar{}url=http://xml.coverpages.org/coombs.html\textbar{}first1=James H.\textbar{}last1=Coombs\textbar{}first2=Allen H. \textbar{}last2=Renear\textbar{}first3=Steven J. \textbar{}last3=DeRose\}\}}\footnote{\{\{cite web\textbar{}last=Bray\textbar{}first=Tim\textbar{}authorlink=Tim Bray\textbar{}url=http://www.tbray.org/ongoing/When/200x/2003/04/09/SemanticMarkup\#p-1\textbar{}title=On Semantics and Markup, Taxonomy of Markup\textbar{}website=www.tbray.org/ongoing\textbar{}date=9 April 2003\textbar{}access-date=9 July 2015\}\}}
 
 Presentational markup
 :The kind of markup used by traditional word-processing systems: binary codes embedded within
@@ -84,11 +72,7 @@ The term \emph{markup} is derived from the traditional publishing practice of \e
 a [[manuscript]], which involves adding handwritten annotations in the form of conventional
 symbolic [[Printing\textbar{}printer]]'s instructions in the margins and text of a paper manuscript or printed.
 it is computer jargon used in coding [[Proofreading\textbar{}proof]]. For centuries, this task was done
-primarily by skilled typographers known as ``markup men''\footnote{\begin{longtable}{|l|l|l|l|}
-\hline
-Allan Woods, \emph{Modern Newspaper Production} (New York: Harper \& Row, 1963), 85; Stewart Harral, \emph{Profitable Public Relations for Newspapers} (Ann Arbor: J.W. Edwards, 1957), 76; and \emph{Chiarella v. United States}, \{\{ussc & 445 & 222 & 1980\}\}.\\
-\hline
-\end{longtable}}
+primarily by skilled typographers known as ``markup men''\footnote{Allan Woods, \emph{Modern Newspaper Production} (New York: Harper \& Row, 1963), 85; Stewart Harral, \emph{Profitable Public Relations for Newspapers} (Ann Arbor: J.W. Edwards, 1957), 76; and \emph{Chiarella v. United States}, \{\{ussc\textbar{}445\textbar{}222\textbar{}1980\}\}.}
 or ``copy markers''\footnote{\emph{From the Notebooks of H.J.H \& D.H.A on Composition}, Kingsport Press Inc., undated (1960s).}
 who marked up text to indicate what [[typeface]], style, and size should be applied to each part, and then passed the manuscript to others for [[typesetting]] by hand. Markup was also commonly applied by editors, proofreaders, publishers, and graphic designers, and indeed by document authors.
 

@@ -21,9 +21,13 @@ class TestLatex < MiniTest::Test
 
     ##### save to disk
     ##  comment/uncomment for usage
-    ## File.open( "#{Texti.root}/test/data/wikipedia/Markup_language.latex", 'w:utf-8' ) do |f|
-    ##  f.write tex.latex
-    ## end
+
+    if false
+      File.open( "#{Texti.root}/test/data/wikipedia/Markup_language.latex", 'w:utf-8' ) do |f|
+        f.write tex.latex
+      end
+    end
+
 
     assert true
   end

@@ -22,7 +22,8 @@ class TestMarkdown < MiniTest::Test
 
     ##### save to disk
     ##  comment/uncomment for usage
-    File.open( "#{Texti.root}/test/data/wikipedia/Markup_language.html", 'w:utf-8' ) do |f|
+    if false
+      File.open( "#{Texti.root}/test/data/wikipedia/Markup_language.html", 'w:utf-8' ) do |f|
       f.write md.html
     end
 
