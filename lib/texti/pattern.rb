@@ -74,23 +74,39 @@ module Texti
 ##
 ##
 
-    SINGLE_BRACKET = %< \\[ (?<single_bracket>
+    SINGLE_SQUARE_BRACKET = %< \\[ (?<single_square_bracket>
                                [^\\]]+
                             )
                         \\]
                       >
 
-    DOUBLE_BRACKET = %< \\[{2} (?<double_bracket>
+    DOUBLE_SQUARE_BRACKET = %< \\[{2} (?<double_square_bracket>
                                  [^\\]]+
                                )
                         \\]{2}
                       >
 
-    TRIPLE_BRACKET = %< \\[{3} (?<triple_bracket>
+    TRIPLE_SQUARE_BRACKET = %< \\[{3} (?<triple_square_bracket>
                                  [^\\]]+
                                )
                         \\]{3}
                       >
+
+#########
+##
+##   {{ fig | test.png }}
+##   {{ img | test.png | title=hello | width=10 }}
+
+   DOUBLE_CURLY_BRACKET = %< \\{{2} (?<double_curly_bracket>
+                                [^\\}]+
+                              )
+                       \\}{2}
+                     >
+
+
+
+
+
 
 
 end # module Texti

@@ -1,0 +1,10 @@
+###############################
+## (builtin / fallback) fig.latex template
+##
+##  1st (unnamed) param: url e.g. test.png etc.
+##
+## note: in latex use alternate syntax e.g. §1§
+##   $$ gets used for math mode
+
+
+\includegraphics{§1§}

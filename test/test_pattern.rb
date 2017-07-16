@@ -10,7 +10,41 @@ require 'helper'
 
 class TestPattern < MiniTest::Test
 
-  def test_brackets
+  def test_curly_brackets
+
+###
+##  todo:
+##    check multi-line match too !!!!
+##
+##
+
+ text = <<TXT
+     {{ fig | test.png }}
+     {{ fig | test.png | width=200 }}
+     {{ fig }}
+     {{fig}}
+     {{ img | test.png | width=200 }}
+     {{ hello }}
+     {{ page }}
+TXT
+
+
+    pp Texti::DOUBLE_CURLY_BRACKET
+
+    puts text
+
+    roots = ['./test/data' ]
+    man   = Texti::TemplateMan.new( roots )
+    t = man.build( text )
+
+    puts t.render
+
+    assert true
+  end
+
+
+
+  def xx_test_square_brackets
 
  text = <<TXT
      [url]
@@ -24,23 +58,23 @@ TXT
 ##   [ref]:    reference pattern  -- must start line
 
 
-    pp Texti::SINGLE_BRACKET
-    pp Texti::DOUBLE_BRACKET
-    pp Texti::TRIPLE_BRACKET
+    pp Texti::SINGLE_SQUARE_BRACKET
+    pp Texti::DOUBLE_SQUARE_BRACKET
+    pp Texti::TRIPLE_SQUARE_BRACKET
 
     ## note:
     ##  order is important
     ##   first try triple, than double, than single
 
-    text = text.gsub( /#{Texti::TRIPLE_BRACKET}|#{Texti::DOUBLE_BRACKET}|#{Texti::SINGLE_BRACKET}/x ) do |match|
+    text = text.gsub( /#{Texti::TRIPLE_SQUARE_BRACKET}|#{Texti::DOUBLE_SQUARE_BRACKET}|#{Texti::SINGLE_SQUARE_BRACKET}/x ) do |match|
       puts "  match=<#{match}>"
       m = Regexp.last_match
-      if m[:single_bracket]
-        puts "    !! bingo single_bracket >#{m[:single_bracket]}<"
-      elsif m[:double_bracket]
-        puts "    !! bingo double_bracket >#{m[:double_bracket]}<"
-      elsif m[:triple_bracket]
-        puts "    !! bingo triple_bracket >#{m[:triple_bracket]}<"
+      if m[:single_square_bracket]
+        puts "    !! bingo single [..] >#{m[:single_square_bracket]}<"
+      elsif m[:double_square_bracket]
+        puts "    !! bingo double [[..]] >#{m[:double_square_bracket]}<"
+      elsif m[:triple_square_bracket]
+        puts "    !! bingo triple [[[..]]] >#{m[:triple_square_bracket]}<"
       else
       end
 
@@ -50,10 +84,8 @@ TXT
     puts text
 
     assert true
-
-
-
   end
+
 
   def xx_test_single_quotes
 

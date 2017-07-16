@@ -10,6 +10,7 @@ require 'pp'
 require 'texti/version'   # note: let version always go first
 require 'texti/pattern'
 require 'texti/parser'
+require 'texti/template'
 
 
 # say hello

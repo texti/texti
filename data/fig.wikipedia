@@ -1,0 +1,6 @@
+###############################
+## (builtin / fallback) fig.wikipedia|wiki|wikitext template
+##
+##  1st (unnamed) param: url e.g. test.png etc.
+
+[[File:$1$]]
