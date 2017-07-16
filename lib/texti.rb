@@ -14,6 +14,7 @@ require 'texti/parser'
 require 'texti/template'
 require 'texti/outline'
 require 'texti/table_of_contents'
+require 'texti/reference'
 
 
 # say hello

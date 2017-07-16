@@ -4,7 +4,7 @@
 module Texti
 
 ## split document in outline, that is,
-##   headlines and text blocks
+##   headings and textblocks
 ##  e.g.
 ##  [
 ##    ['h1', ..],
