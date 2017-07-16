@@ -65,22 +65,48 @@ class TemplateMan   # Template manager / finder
   end
 
 
-  def fetch( name, format: 'html' )
+  def fetch( name, format:'html' )
 
     @roots.each do |root|
-       path = "#{root}/#{name}.#{format}"
-       print "  check >#{path}<..."
-       if File.exist?( path )
+
+       ## check with (_) underscore first
+       ##  todo/fix: auto-add /_ to roots - why? why not? more generic?
+       ##   add flags e.g. for builtin - no checkin for _ for builtin only for "custom"??
+
+       path1 = "#{root}/_#{name}.#{format}"
+       path2 = "#{root}/#{name}.#{format}"
+       path  = nil
+
+       print "  check >#{path1}<..."
+       if File.exist?( path1 )
          print " OK\n" ## not found
+         path = path1
+       else
+         print " -X-\n" ## not found
+         print "  check >#{path2}<..."
+         if File.exist?( path2 )
+           print " OK\n" ## not found
+           path = path2
+         else
+           print " -X-\n" ## not found
+         end
+       end
+
+       if path
          text = File.open( path, 'r:bom|utf-8' ).read
          t = Template.new( text, name:name, format:format, man:self )
          return t
-       else
-         print " -X-\n" ## not found
        end
     end
 
+    ## special case: for markdown try html as fallback
+    if format == 'markdown'
+      t = fetch( name, format:'html' )
+      return t  if t
+    end
+
     puts "!!! template >#{name}< [.#{format}] not found in root paths: #{@roots.inspect}"
+    ### todo/fix: return nil
     exit 1
   end # method fetch
 

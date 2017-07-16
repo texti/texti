@@ -10,7 +10,50 @@ require 'helper'
 
 class TestPattern < MiniTest::Test
 
-  def test_curly_brackets
+  def test_headings
+    text = <<TXT
+=Heading1.a
+
+= Heading 1.b
+
+= Heading 1.c ======
+
+== Heading 2
+
+===Heading 3
+=Heading 1.d
+TXT
+
+
+    pp Texti::HEADING1
+    pp text
+
+    puts text
+    puts " ::::::::::::::::: "
+
+    ## wrap in (?:)  why? why not?
+    ##    will pipe(|) bind to patter or just last term???
+
+    text = text.gsub( /(?:#{Texti::HEADING3})|(?:#{Texti::HEADING2})|(?:#{Texti::HEADING1})/ox ) do |match|
+      puts "  match=|>#{match}<|"
+      m = Regexp.last_match
+      if m[:heading1]
+        puts "    !! bingo = (heading 1) |>#{m[:heading1]}<|"
+      elsif m[:heading2]
+        puts "    !! bingo == (heading 2) |>#{m[:heading2]}<|"
+      elsif m[:heading3]
+        puts "    !! bingo === (heading 3) |>#{m[:heading3]}<|"
+      else
+      end
+
+      match
+    end
+
+    assert true
+  end
+
+
+  def xx_test_curly_brackets
 
 ###
 ##  todo:

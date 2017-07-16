@@ -3,6 +3,49 @@
 
 module Texti
 
+  ##########
+  ## headings
+  ##
+  ##   check: is possible multi-line heading  === hello \n hello2 === etc. ??
+
+  ## todo/check:
+  ##   [^=]  allow escapes \t etc. - why? why not??
+  ##
+  ##  note use [ ] for spaces !!  - \s will also match newline!!! (and tabs)
+
+  HEADING1 = %< ^=
+                [ ]*               # optinal space
+                 (?<heading1>
+                               (?:
+                                  [^=]
+                               )+?    # note: use non-greedy (min/first match)
+                  )
+                           [ ]*     # optional space
+                           =*
+                           \\n
+                       >
+
+  HEADING2 = %< ^==
+                [ ]*
+                 (?<heading2>
+                               (?:
+                                  [^=]
+                               )+?
+                  )
+                [ ]* =* \\n
+              >
+
+  HEADING3 = %< ^===
+                [ ]*
+                 (?<heading3>
+                               (?:
+                                  [^=]
+                               )+?
+                  )
+                [ ]* =* \\n
+               >
+
+
   #################################
   ##### single quotes e.g. ''''
 
@@ -17,6 +60,7 @@ module Texti
    ##  ''..''       2 (2x2= 4)  ''''
    ##  '''..'''     3 (3x2= 6)  ''''''
    ##  '''''..''''' 5 (5x2=10)  ''''''''''
+
 
 
    ####
