@@ -96,5 +96,104 @@ Let's keep statements / tags e.g. `{% %}` - why? why not?
 {%endfor%}
 ```
 
+`%`used for latex comments - `{%` is different enough to avoid confusion ??
 
+
+Why not?
+
+```
+{§ for category in page.categories §}  --> already used for §1§  §page.title§ etc.  
+...
+{§ endfor §}
+
+or
+
+{> for category in page.categories <}   
+...
+{> endfor <}
+
+or
+
+{>for category in page.categories<}   
+...
+{>endfor<}
+
+or
+
+[>for category in page.categories<]   
+...
+[>endfor<]
+
+or
+
+[%for category in page.categories%]   
+...
+[%endfor%]
+
+or
+
+{| for category in page.categories |}   
+...
+{| endfor |}
+```
+
+
+
+### Alternative to `{{ }}`
+
+Yes:
+
+```
+Use §1§                => mapped to {{  para1 }}
+Use §page.title§       => mapped to {{  page.title }}
+```
+
+
+More:
+
+
+```
+  <img src="{=$1}">     -- {= ..}    too long ??
+  <img src="{=#1}">     -- {= ..}    too long ??
+  <img src="{=\1}">     -- {= ..}    too long ??
+  <img src="[=$1]">   
+  <img src="[=#1]">   
+
+  <img src="#{$1}">
+  <img src="#[$1]">     -- {= ..}    too long ??
+  <img src="#{\1}">
+  <img src="#[\1]">     -- {= ..}    too long ??
+ 
+
+  <img src="{$1}">      -- {$num} {$id} shortcut/shortform - why? why not
+  <img src="{#1}">      -- {$num} {$id} shortcut/shortform - why? why not
+  <img src="§1§">       --  §num§  §id§ shortcut/shortform - why? why not
+
+```
+
+what to use for position paramters?
+
+```
+$1
+#1
+\1
+§1
+other?
+```
+
+
+```
+  <img src="{=page.cover}"> 
+  <img src="{= page.cover }"> 
+
+  <img src="{$page.cover}">  
+  <img src="{#page.cover}">  
+  <img src="§page.cover§"> 
+
+  <img src="[=page.cover]"> 
+
+   <img src="#[page.cover]"> 
+   <img src="#{page.cover}"> 
+
+```
 
