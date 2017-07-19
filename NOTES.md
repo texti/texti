@@ -144,8 +144,8 @@ or
 Yes:
 
 ```
-Use §1§                => mapped to {{  para1 }}
-Use §page.title§       => mapped to {{  page.title }}
+Use §1§                => mapped to {{ \1 }} or {{ params[0] }}  -- \1 => params[0]
+Use §page.title§       => mapped to {{ page.title }}
 ```
 
 
@@ -205,9 +205,10 @@ long format with filters
 ```
 {{ page.people | group_by: "school" }}
 
+§[ page.people | group_by: "school" ]§     §[ \1 ]§
+
 §= page.people | group_by: "school" §      §= \1 §
 §< page.people | group_by: "school" >§     §< \1 >§
-§[ page.people | group_by: "school" ]§     §[ \1 ]§
 §{ page.people | group_by: "school" }§     §{ \1 }§
 
 §< page.people | group_by: "school" >
@@ -220,4 +221,82 @@ long format with filters
 
 {§ page.people | group_by: "school" §}   -- confusion with statement ??
 ```
+
+### Examples
+
+Wikipedia Categories
+
+Original:
+
+```
+{% for category in categories %}
+  [[Category:{{category}}]]
+{% endfor %}
+```
+
+Alt Synatx I:
+
+```
+{% for category in categories %}
+  [[Category:§category§]]
+{% endfor %}
+```
+
+```
+[% for category in categories %]
+  [[Category:§category]]
+[% endfor %]
+```
+
+```
+[% for category in categories %]
+  [[Category:§{category}§]]
+[% endfor %]
+```
+
+
+```
+%{ for category in categories }%
+  [[Category:§category]]
+%{ endfor }%
+```
+
+```
+{% for category in categories %}
+  [[Category:§[ category ]§]]
+{% endfor %}
+```
+
+
+```
+%{ for category in categories }%
+  [[Category:§{category}§]]
+%{ endfor }%
+```
+
+```
+{% raw %}{% endraw %}{% raw %}{% endraw %}
+%{ raw }%%{ endraw }%%{ raw }%%{ endraw }%
+%{ raw }% %{ endraw }% %{ raw }% %{ endraw }%
+```
+
+```
+§1§§2§§3§
+§1§~§2§~§3§        =>  §[ \1 \2 \3 ]§ => §[ params[0] + parmas[1] + params[2] ]§
+§1§ §2§ §3§
+§1§2§3
+§[\1]§[\2]§[\3]
+§[\1]§§[\2]§§[\3]§
+
+[§\1§][§\2§][§\3§]
+[§1§][§2§][§3§]       => why not -- cannot match [[]] e.g. [[[§1§]]] - triple or double link ??? [[§1§]] or [[§[\1]§]]
+
+§1234              
+§{1}2345
+
+§category§1  ~~§category§~~§1§   ~~~ optional invisible spacer!!! (for pretty printing - why? why not? only allowed beetween §.§~§.§ only allow one ?? use two (double for escaping ~)
+§{category}1
+§{category}§~~~1
+```
+
 
