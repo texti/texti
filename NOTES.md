@@ -66,3 +66,35 @@ users, even authors or editors.
 ```
 
 does not work for multi-line? or needs blank line??
+
+
+
+## Alternative Liquid Syntax
+
+Why?
+
+:no:  `{{ }}` => used for page templates (includes)
+
+
+```
+<img src="{{$1}}">   
+```
+
+:no: $.$  => latex match mode 
+
+```
+<img src="$1$">       why not:  
+```
+
+
+
+Let's keep statements / tags e.g. `{% %}` - why? why not?
+
+```
+{%for category in page.categories%}   
+...
+{%endfor%}
+```
+
+
+
