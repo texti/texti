@@ -9,8 +9,8 @@ require 'strscan'     # incl. StringScanner
 
 
 ## 3rd party
-require 'kramdown'     # markdown and latex converter
-
+require 'kramdown'     # markdown to html and latex converter
+require 'liquid'       # liquid template engine
 
 
 # our own code
