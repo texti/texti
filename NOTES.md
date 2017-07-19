@@ -176,8 +176,8 @@ what to use for position paramters?
 ```
 $1
 #1
-\1
-§1
+\1     
+§1    -- use §1§ short form for §= \1 §
 other?
 ```
 
@@ -189,11 +189,35 @@ other?
   <img src="{$page.cover}">  
   <img src="{#page.cover}">  
   <img src="§page.cover§"> 
+  <img src="§=page.cover§"> 
+  <img src="§= page.cover §"> 
 
   <img src="[=page.cover]"> 
 
    <img src="#[page.cover]"> 
    <img src="#{page.cover}"> 
 
+```
+
+
+long format with filters
+
+```
+{{ page.people | group_by: "school" }}
+
+§= page.people | group_by: "school" §      §= \1 §
+§< page.people | group_by: "school" >§     §< \1 >§
+§[ page.people | group_by: "school" ]§     §[ \1 ]§
+§{ page.people | group_by: "school" }§     §{ \1 }§
+
+§< page.people | group_by: "school" >
+§[ page.people | group_by: "school" ]
+§{ page.people | group_by: "school" }
+
+
+§page.people | group_by: "school"§   -- allow spaces and quotes ???
+
+
+{§ page.people | group_by: "school" §}   -- confusion with statement ??
 ```
 
